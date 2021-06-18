@@ -7,7 +7,7 @@ import {ProjectStatus} from '../model/ProjectStatus';
   providedIn: 'root'
 })
 export class ProjectStatusService {
-  private baseUrl = 'http://35.228.68.66:8081/v1/status';
+  private baseUrl = 'https://nprdb.herokuapp.com//v1/status';
 
   constructor(private http: HttpClient) {}
 

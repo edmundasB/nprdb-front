@@ -8,7 +8,7 @@ import {Financial} from '../model/financial';
   providedIn: 'root'
 })
 export class FinancialService {
-  private baseUrl = 'http://35.228.68.66:8081/v1/financial';
+  private baseUrl = 'https://nprdb.herokuapp.com//v1/financial';
 
   constructor(private http: HttpClient) { }
 

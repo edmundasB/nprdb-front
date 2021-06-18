@@ -7,7 +7,7 @@ import {MainNprdbReport} from '../model/MainNprdbReport';
   providedIn: 'root'
 })
 export class NprdbReportsService {
-  private baseUrl = 'http://35.228.68.66:8081/v1/report-main';
+  private baseUrl = 'https://nprdb.herokuapp.com//v1/report-main';
 
   constructor(private http: HttpClient) { }
 

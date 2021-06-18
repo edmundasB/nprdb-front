@@ -7,7 +7,7 @@ import {Accounting} from '../model/accounting';
   providedIn: 'root'
 })
 export class AccountingService {
-  private baseUrl = 'http://35.228.68.66:8081/v1/accounting';
+  private baseUrl = 'https://nprdb.herokuapp.com//v1/accounting';
 
   constructor(private http: HttpClient) { }
 

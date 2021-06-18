@@ -8,7 +8,7 @@ import {ProtectionReceived} from '../model/protectionReceived';
   providedIn: 'root'
 })
 export class ProtectionReceivedService {
-  private baseUrl = 'http://35.228.68.66:8081/v1/protection-received';
+  private baseUrl = 'https://nprdb.herokuapp.com//v1/protection-received';
 
   constructor(private http: HttpClient) { }
 

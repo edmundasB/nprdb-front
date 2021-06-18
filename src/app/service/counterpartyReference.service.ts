@@ -7,7 +7,7 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class CounterpartyReferenceService {
-  private baseUrl = 'http://35.228.68.66:8081/v1/counterparty-reference';
+  private baseUrl = 'https://nprdb.herokuapp.com//v1/counterparty-reference';
 
   constructor(private http: HttpClient) { }
 

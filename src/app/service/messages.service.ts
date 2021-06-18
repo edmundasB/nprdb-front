@@ -9,7 +9,7 @@ import * as FileSaver from 'file-saver';
   providedIn: 'root'
 })
 export class MessagesService {
-  private baseUrl = 'http://35.228.68.66:8081/v1/download';
+  private baseUrl = 'https://nprdb.herokuapp.com//v1/download';
 
   constructor(private http: HttpClient) { }
 

@@ -7,7 +7,7 @@ import {CounterpartyDefault} from '../model/counterpartyDefault';
   providedIn: 'root'
 })
 export class CounterpartyDefaultService {
-  private baseUrl = 'http://35.228.68.66:8081/v1/counterparty-default';
+  private baseUrl = 'https://nprdb.herokuapp.com//v1/counterparty-default';
 
   constructor(private http: HttpClient) { }
 

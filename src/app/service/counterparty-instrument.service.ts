@@ -7,7 +7,7 @@ import {CounterpartyInstrument} from '../model/counterpartyInstrument';
   providedIn: 'root'
 })
 export class CounterpartyInstrumentService {
-  private baseUrl = 'http://35.228.68.66:8081/v1/counterparty-instrument';
+  private baseUrl = 'https://nprdb.herokuapp.com//v1/counterparty-instrument';
 
   constructor(private http: HttpClient) { }
 

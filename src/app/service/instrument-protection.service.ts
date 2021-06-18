@@ -8,7 +8,7 @@ import {InstrumentProtection} from '../model/instrumentProtection';
   providedIn: 'root'
 })
 export class InstrumentProtectionService {
-  private baseUrl = 'http://35.228.68.66:8081/v1/instrument-protection';
+  private baseUrl = 'https://nprdb.herokuapp.com//v1/instrument-protection';
 
   constructor(private http: HttpClient) { }
 

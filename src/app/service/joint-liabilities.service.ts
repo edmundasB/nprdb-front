@@ -7,7 +7,7 @@ import {JointLiabilities} from '../model/jointLiabilities';
   providedIn: 'root'
 })
 export class JointLiabilitiesService {
-  private baseUrl = 'http://35.228.68.66:8081/v1/joint-liabilities';
+  private baseUrl = 'https://nprdb.herokuapp.com//v1/joint-liabilities';
 
   constructor(private http: HttpClient) { }
 
