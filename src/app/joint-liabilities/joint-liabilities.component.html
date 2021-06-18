@@ -1,0 +1,39 @@
+<form (ngSubmit)="onSubmit()">
+  <div class="card">
+    <div class="card-body">
+      <div id="overlay">
+        <div class="w-100 d-flex justify-content-center align-items-center">
+          <div class="spinner"></div>
+        </div>
+      </div>
+  <div class="form-group">
+    <label for="rprtngAgnCd">Atskaitingojo agento identifikatorius</label>
+    <input type="text" disabled class="form-control" id="rprtngAgnCd" required [(ngModel)]="jointLiabilities.rprtngAgnCd" name="rprtngAgnCd">
+  </div>
+  <div class="form-group">
+    <label for="obsrvdAgntCd">Stebimo agento identifikatorius</label>
+    <input type="text" disabled class="form-control" id="obsrvdAgntCd" required [(ngModel)]="jointLiabilities.obsrvdAgntCd" name="obsrvdAgntCd">
+  </div>
+  <div class="form-group">
+    <label for="enttyPrdbCd">Kitos sandorio šalies identifikatorius</label>
+    <input type="text" disabled class="form-control" id="enttyPrdbCd" required [(ngModel)]="jointLiabilities.enttyPrdbCd" name="enttyPrdbCd">
+  </div>
+  <div class="form-group">
+    <label for="cntrctId">Paskolos sutarties identifikatorius</label>
+    <input type="text" disabled class="form-control" id="cntrctId" required [(ngModel)]="jointLiabilities.cntrctId" name="cntrctId">
+  </div>
+  <div class="form-group">
+    <label for="instrmntId">Skolos priemonės identifikatorius</label>
+    <input type="text" disabled class="form-control" id="instrmntId" required [(ngModel)]="jointLiabilities.instrmntId" name="instrmntId">
+  </div>
+  <div class="form-group">
+    <label for="jntLbltyAmnt">Bendrų įsipareigojimų suma</label>
+    <input type="text" class="form-control" id="jntLbltyAmnt" required [(ngModel)]="jointLiabilities.jntLbltyAmnt" name="jntLbltyAmnt">
+  </div>
+    </div>
+  </div>
+  <br/>
+  <button type="submit" class="btn btn-success float-right">Submit</button>
+</form>
+<br/>
+<br/>

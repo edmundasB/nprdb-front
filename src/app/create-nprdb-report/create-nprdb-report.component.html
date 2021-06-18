@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <h5>{{reportName}}</h5>
+  </div>
+</div>
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="1. Kitos sandorio šalies ataskaitiniai duomenys" id="1" >
+    <ng-template matTabContent>
+      <app-counterparty-reference [reportId]="reportId" ></app-counterparty-reference>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="2. Skolos priemonės duomenys">
+    <ng-template matTabContent>
+      <app-instrument [reportId]="reportId"></app-instrument>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="3. Finansiniai duomenys">
+    <ng-template matTabContent>
+      <app-financial [reportId]="reportId"></app-financial>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="4. Kitų sandorio šalių – skolos priemonių duomenys">
+    <ng-template matTabContent>
+      <app-counterparty-instrument [reportId]="reportId"></app-counterparty-instrument>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="5. Bendrų įsipareigojimų duomenys">
+    <ng-template matTabContent>
+      <app-joint-liabilities [reportId]="reportId"></app-joint-liabilities>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="6. Apskaitos duomenys">
+    <ng-template matTabContent>
+      <app-accounting [reportId]="reportId"></app-accounting>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="7. Gautos apsaugos duomenys">
+    <ng-template matTabContent>
+      <app-protection-received [reportId]="reportId"></app-protection-received>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="8. Skolos priemonių – gautos apsaugos duomenys">
+    <ng-template matTabContent>
+      <app-instrument-protection [reportId]="reportId"></app-instrument-protection>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="10. Kitos sandorio šalies įsipareigojimų neįvykdymo duomenys">
+    <ng-template matTabContent>
+      <app-counterparty-default [reportId]="reportId"></app-counterparty-default>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="11. Gautos apsaugos – apsaugos teikėjų duomenys">
+    <ng-template matTabContent>
+      <app-protection-received-protection-providers [reportId]="reportId"></app-protection-received-protection-providers>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

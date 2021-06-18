@@ -1,0 +1,89 @@
+<div class="panel panel-primary">
+  <div class="panel-heading row">
+    <div class="col-10"><h2>Ataskaitų sąrašas</h2></div>
+    <div>
+      <button class="btn btn-danger" (click)="open(content)">Nauja ataskaita</button>
+    </div>
+    <div class="input-group mb-3 col-6">
+      <select [(ngModel)]="sortProperty" class="custom-select" id="inputGroupSelect03"
+              aria-label="Example select with button addon">
+        <option *ngFor="let status of STATUSES" [ngValue]="status">
+          {{status}}
+        </option>
+      </select>
+      <div class="input-group-prepend">
+        <button class="btn btn-primary" type="button" (click)="sort()">Rikiuoti</button>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>id</th>
+        <th>Pavadinimas</th>
+        <!--            <th>Paskutinės modifikacijos data</th>-->
+        <th>Sukurta</th>
+        <th>Statusas</th>
+        <!--            <th>1. CF pateikta</th>-->
+        <!--            <th>2. Protection pateikta</th>-->
+        <!--            <th>3. Instrument pateikta</th>-->
+        <!--            <th>4. Accounting pateikta</th>-->
+        <th>Veiksmai</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let report of reports | async">
+        <td>{{report.id}}</td>
+        <td>{{report.reportName}}</td>
+        <!--            <td>{{report.updateDateTime | date: 'yyyy/MM/dd h:mm'}}</td>-->
+        <td>{{report.createDateTime | date: 'yyyy/MM/dd h:mm'}}</td>
+        <!--            <td> <span class="glyphicon glyphicon-ok"></span> {{report.msg1Delivered}}   <span class="glyphicon glyphicon-ok"></span></td>-->
+        <!--            <td>{{report.msg2Delivered}}</td>-->
+        <!--            <td>{{report.msg3Delivered}}</td>-->
+        <!--            <td>{{report.msg4Delivered}}</td>-->
+        <td>
+          <app-project-status-bar [report]="report"></app-project-status-bar>
+        </td>
+        <td>
+          <button (click)="editReport(report.reportId)" class="btn btn-primary btn-block btn-sm">Redaguoti</button>
+          <button (click)="downloadCounterReference(report.reportId, report.reportName)"
+                  class="mt-1 ml-1 btn btn-secondary  btn-sm">1
+          </button>
+          <button (click)="downloadgetProtectionDocument(report.reportId, report.reportName)"
+                  class=" mt-1 ml-1 btn btn-secondary  btn-sm">2
+          </button>
+          <button (click)="downloadgetInstrumentDocument(report.reportId, report.reportName)"
+                  class=" mt-1 ml-1 btn btn-secondary btn-sm">3
+          </button>
+          <button (click)="downloadccounting(report.reportId, report.reportName)"
+                  class="mt-1 ml-1 btn btn-secondary btn-sm">4
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Nauja ataskaita</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="reportNameId">Įveskite pavadinimą</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="reportNameId" name="reportName" [(ngModel)]="reportName">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="createReport()">Kurti</button>
+  </div>
+</ng-template>

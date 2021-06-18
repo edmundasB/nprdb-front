@@ -1,0 +1,47 @@
+<form (ngSubmit)="onSubmit()">
+  <div class="card">
+    <div class="card-body">
+      <div id="overlay">
+        <div class="w-100 d-flex justify-content-center align-items-center">
+          <div class="spinner"></div>
+        </div>
+      </div>
+  <div class="form-group">
+    <label for="rprtngAgntCdId">Atskaitingojo agento identifikatorius</label>
+    <input type="text" disabled class="form-control" id="rprtngAgntCdId"  [(ngModel)]="counterpartyInstrument.rprtngAgntCd" name="rprtngAgntCd">
+  </div>
+  <div class="form-group">
+    <label for="obsrvdAgntCdId">Stebimo agento identifikatorius</label>
+    <input type="text" disabled class="form-control" id="obsrvdAgntCdId"  [(ngModel)]="counterpartyInstrument.obsrvdAgntCd" name="obsrvdAgntCd">
+  </div>
+  <div class="form-group">
+    <label for="entityPrdbCdId">Kitos sandorio šalies identifikatorius</label>
+    <input type="text" disabled class="form-control" id="entityPrdbCdId"  [(ngModel)]="counterpartyInstrument.entityPrdbCd" name="entityPrdbCd">
+  </div>
+  <div class="form-group">
+    <label for="cntrctId">Paskolos sutarties identifikatorius</label>
+    <input type="text" disabled class="form-control" id="cntrctId"  [(ngModel)]="counterpartyInstrument.cntrctId" name="cntrctId">
+  </div>
+  <div class="form-group">
+    <label for="instrmntId">Skolos priemonės identifikatorius</label>
+    <input type="text" disabled class="form-control" id="instrmntId"  [(ngModel)]="counterpartyInstrument.instrmntId" name="instrmntId">
+  </div>
+  <div class="form-group">
+    <label for="enttyRlId">Kitos sandorio šalies vaidmuo</label>
+    <select class="form-control" id="enttyRlId" [(ngModel)]="counterpartyInstrument.enttyRl" name="enttyRl">
+      <option value=""></option>
+      <option value="1">Kreditorius</option>
+      <option value="2">Skolininkas</option>
+      <option value="7">Administratorius</option>
+      <option value="3">Iniciatorius</option>
+      <option value="13">Finansinio užstato gavėjas pagal FUSĮ</option>
+      <option value="14">Platformos operatorius</option>
+    </select>
+  </div>
+    </div>
+  </div>
+  <br/>
+  <button type="submit" class="btn btn-success float-right">Submit</button>
+</form>
+<br/>
+<br/>

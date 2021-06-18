@@ -1,0 +1,99 @@
+<form (ngSubmit)="onSubmit()">
+  <div class="card">
+    <div class="card-body">
+      <div id="overlay">
+        <div class="w-100 d-flex justify-content-center align-items-center">
+          <div class="spinner"></div>
+        </div>
+      </div>
+  <div class="form-group">
+    <label for="rprtngAgnCdId">Atskaitingojo agento identifikatorius</label>
+    <input type="text" disabled class="form-control" id="rprtngAgnCdId" [(ngModel)]="financial.rprtngAgnCd" name="rprtngAgnCd">
+  </div>
+  <div class="form-group">
+    <label for="obsrvdAgntCdId">Stebimo agento identifikatorius</label>
+    <input type="text" disabled class="form-control" id="obsrvdAgntCdId" [(ngModel)]="financial.obsrvdAgntCd" name="obsrvdAgntCd">
+  </div>
+  <div class="form-group">
+    <label for="cntrctId">Paskolos sutarties identifikatorius</label>
+    <input type="text" disabled class="form-control" id="cntrctId" [(ngModel)]="financial.cntrctId" name="cntrctId">
+  </div>
+  <div class="form-group">
+    <label for="instrmntId">Skolos priemonės identifikatorius</label>
+    <input type="text" disabled class="form-control" id="instrmntId" [(ngModel)]="financial.instrmntId" name="instrmntId">
+  </div>
+<!--  <div class="form-group">
+    <label for="dtNxtIntrstRtRstId">Kito palūkanų normos perskaičiavimo data</label>
+    <input type="text" class="form-control" id="dtNxtIntrstRtRstId" [(ngModel)]="financial.dtNxtIntrstRtRst" name="dtNxtIntrstRtRst">
+  </div>-->
+  <div class="form-group">
+    <label for="appldRtId">Taikoma palūkanų norma</label>
+    <input type="text" class="form-control" id="appldRtId" [(ngModel)]="financial.appldRt" name="appldRt">
+  </div>
+  <div class="form-group">
+    <label for="trnsfrrdAmntId">Pervesta suma</label>
+    <input type="text" class="form-control" id="trnsfrrdAmntId" [(ngModel)]="financial.trnsfrrdAmnt" name="trnsfrrdAmnt">
+  </div>
+  <div class="form-group">
+    <label for="arrrsId">Įsiskolinimas už skolos priemonę</label>
+    <input type="text" class="form-control" id="arrrsId" [(ngModel)]="financial.arrrs" name="arrrs">
+  </div>
+  <div class="form-group">
+    <label for="dtPstDId">Praleisto įsiskolinimo už skolos priemonę data</label>
+    <input type="text" class="form-control" id="dtPstDId" [(ngModel)]="financial.dtPstD" name="dtPstD">
+  </div>
+  <div class="form-group">
+    <label for="typScrtstnId">Pakeitimo vertybiniais popieriais rūšis</label>
+    <input type="text" class="form-control" id="typScrtstnId" [(ngModel)]="financial.typScrtstn" name="typScrtstn">
+<!--    <select class="form-control" [(ngModel)]="financial.typScrtstn" name="typScrtstn" id="typScrtstnId">-->
+<!--      <option value="1">Tradicinis pakeitimas vertybiniais popieriais(1)</option>-->
+<!--      <option value="6">Sintetinis pakeitimas vertybiniais popieriais(6)</option>-->
+<!--      <option value="7">Nepakeista vertybiniais popieriais(7)</option>-->
+<!--    </select>-->
+  </div>
+  <div class="form-group">
+    <label for="otstndngNmnlAmntId">Likusi nominali vertė</label>
+    <input type="text" class="form-control" id="otstndngNmnlAmntId" [(ngModel)]="financial.otstndngNmnlAmnt" name="otstndngNmnlAmnt">
+  </div>
+<!--  <div class="form-group">
+    <label for="typChngOtstndngNmnlAmntId">Likusios nominalios vertės pokyčio rūšis</label>
+    <select  class="form-control" id="typChngOtstndngNmnlAmntId" name="typChngOtstndngNmnlAmnt" [(ngModel)]="financial.typChngOtstndngNmnlAmnt">
+      <option value="1">Pirkimas</option>
+      <option value="2">Perėmimas</option>
+      <option value="3">Visiškai arba iš dalies nurašytos paskolos pripažinimas balanse</option>
+      <option value="4">Pardavimas</option>
+      <option value="5">Perdavimas</option>
+      <option value="6">Nurašymas</option>
+      <option value="7">Nurašytos paskolos pardavimas</option>
+      <option value="8">Nurašytos paskolos grąžinimas</option>
+      <option value="9">Grąžinimas kreditoriui įvykdžius arba pardavus paskolos užtikrinimo priemonę</option>
+      <option value="10">Grąžinimas kreditoriui perėmus finansinės nuomos objektą</option>
+    </select>
+  </div>-->
+<!--  <div class="form-group">
+    <label for="amntChngotstndngNmnlAmntId">Likusios nominalios vertės pokyčio suma</label>
+    <input type="text" class="form-control" id="amntChngotstndngNmnlAmntId" [(ngModel)]="financial.amntChngotstndngNmnlAmnt" name="amntChngotstndngNmnlAmnt">
+  </div>-->
+<!--  <div class="form-group">
+    <label for="offBlncShtAmntId">Nebalansiniai straipsniai</label>
+    <input type="text" class="form-control" id="offBlncShtAmntId" [(ngModel)]="financial.offBlncShtAmnt" name="offBlncShtAmnt">
+  </div>-->
+  <div class="form-group">
+    <label for="finalStatusId">Galutinė paskolos būsena</label>
+    <select class="form-control" id="finalStatusId" name="finalStatus" [(ngModel)]="financial.finalStatus">
+      <option value=""></option>
+      <option value="1">Grąžinta arba pasibaigė kreditavimo įsipareigojimas</option>
+      <option value="2">Parduota</option>
+      <option value="3">Perduota</option>
+      <option value="4">Nurašyta su reikalavimo teise</option>
+      <option value="5">Nurašyta be reikalavimo teisės</option>
+      <option value="6">Nurašyta paskola grąžinta į balansą</option>
+    </select>
+  </div>
+</div>
+  </div>
+    <br/>
+    <button type="submit" class="btn btn-success float-right">Submit</button>
+</form>
+<br/>
+<br/>

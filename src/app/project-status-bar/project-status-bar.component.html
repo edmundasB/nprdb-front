@@ -1,0 +1,44 @@
+<div [ngClass]="getColor()">
+  <p class="btn-outline-primary">{{selectedStatus}}</p>
+</div>
+<div class="col text-center">
+  <button class="btn btn-primary btn-sm" (click)="open(content)">Keisti statusą</button>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Projekto statusas</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Statusas:</label>
+        </div>
+        <select [(ngModel)]="selectedStatusForUpdate" class="custom-select" id="inputGroupSelect01">
+          <option *ngFor="let status of STATUSES" [ngValue]="status">
+            {{status}}
+          </option>
+        </select>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">@</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Kodas" aria-label="Kodas" aria-describedby="basic-addon1"
+               [(ngModel)]="uniqueCode">
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="closer" class="alert alert-danger" role="alert">
+    Neteisingas kodas! Busena negali būti pakeista.
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="updateStatus()">Atnaujinti</button>
+  </div>
+</ng-template>
+

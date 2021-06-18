@@ -1,0 +1,51 @@
+<form (ngSubmit)="onSubmit()">
+  <div class="card">
+    <div class="card-body">
+      <div id="overlay">
+        <div class="w-100 d-flex justify-content-center align-items-center">
+          <div class="spinner"></div>
+        </div>
+      </div>
+  <div class="form-group">
+    <label for="rprtngAgnCdId">Atskaitingojo agento identifikatorius</label>
+    <input type="text" disabled class="form-control" id="rprtngAgnCdId" required [(ngModel)]="instrumentProtection.rprtngAgnCd" name="rprtngAgnCd">
+  </div>
+  <div class="form-group">
+    <label for="obsrvdAgntCdId">Stebimo agento identifikatorius</label>
+    <input type="text" disabled class="form-control" id="obsrvdAgntCdId" required [(ngModel)]="instrumentProtection.obsrvdAgntCd" name="obsrvdAgntCd">
+  </div>
+  <div class="form-group">
+    <label for="cntrctId">Paskolos sutarties identifikatorius</label>
+    <input type="text" disabled class="form-control" id="cntrctId" required [(ngModel)]="instrumentProtection.cntrctId" name="cntrctId">
+  </div>
+  <div class="form-group">
+    <label for="instrmntId">Skolos priemonės identifikatorius</label>
+    <input type="text" disabled class="form-control" id="instrmntId" required [(ngModel)]="instrumentProtection.instrmntId" name="instrmntId">
+  </div>
+  <div class="form-group">
+    <label for="prtctnId">Apsaugos identifikatorius</label>
+    <input type="text" class="form-control" id="prtctnId" required [(ngModel)]="instrumentProtection.prtctnId" name="prtctnId">
+  </div>
+  <div class="form-group">
+    <label for="prtctnAllctdVlId">Apsaugos priskirta vertė</label>
+    <input type="text" class="form-control" id="prtctnAllctdVlId" required [(ngModel)]="instrumentProtection.prtctnAllctdVl" name="prtctnAllctdVl">
+  </div>
+  <div class="form-group">
+    <label for="thrdPrtyPrrtyClmsId">Trečiosios šalies pirmumo teisės reikalavimai apsaugos atžvilgiu</label>
+    <input type="text" class="form-control" id="thrdPrtyPrrtyClmsId" required [(ngModel)]="instrumentProtection.thrdPrtyPrrtyClms" name="thrdPrtyPrrtyClms">
+  </div>
+  <div class="form-group">
+    <label for="rankClltrlId">Turto įkeitimo eiliškumas</label>
+    <input type="text" class="form-control" id="rankClltrlId" required [(ngModel)]="instrumentProtection.rankClltrl" name="rankClltrl">
+  </div>
+  <div class="form-group">
+    <label for="mrtggIdPrtctnId">Apsaugos hipotekos identifikatorius</label>
+    <input type="text" class="form-control" id="mrtggIdPrtctnId" required [(ngModel)]="instrumentProtection.mrtggIdPrtctn" name="mrtggIdPrtctn">
+  </div>
+    </div>
+  </div>
+  <br/>
+  <button type="submit" class="btn btn-success float-right">Submit</button>
+</form>
+<br/>
+<br/>

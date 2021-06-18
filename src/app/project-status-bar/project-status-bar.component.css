@@ -1,0 +1,34 @@
+
+p {
+  color: azure;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: bold;
+  align-content: center;
+  -webkit-align-content: center;
+}
+.pildoma {
+  background-color:orchid;
+  align-content: center;
+  -webkit-align-content: center;
+}
+.paruosta_pateikimui {
+  background-color: darkblue;
+}
+.teikiama {
+  background-color:darkred;
+}
+.pateikta {
+  background-color: olive;
+}
+.naujinama {
+  background-color: darkorange;
+}
+.atnaujinta {
+  background-color: gold;
+}
+.uzdaryta {
+  background-color: mediumseagreen;
+}
+.mt-1 {
+  margin-top: 1rem !important;
+}

@@ -1,0 +1,148 @@
+<form (ngSubmit)="onSubmit()">
+<div class="card">
+  <div class="card-body">
+    <div id="overlay">
+      <div class="w-100 d-flex justify-content-center align-items-center">
+        <div class="spinner"></div>
+        </div>
+    </div>
+  <div class="form-group">
+    <label for="rprtngAgnCdId">Atskaitingojo agento identifikatorius</label>
+    <input type="text" class="form-control" id="rprtngAgnCdId" name="rprtngAgnCd" [(ngModel)]="counterpartyReference.rprtngAgnCd">
+  </div>
+  <div class="form-group">
+    <label for="entityPrdbCdId">Kitos sandorio šalies identifikatorius</label>
+    <input type="text" class="form-control" id="entityPrdbCdId" name="entityPrdbCd" [(ngModel)]="counterpartyReference.entityPrdbCd">
+  </div>
+  <div class="form-group">
+    <label for="leiId">Juridinio asmens identifikatorius (JAI)</label>
+    <input type="text" class="form-control" id="leiId" name="lei" [(ngModel)]="counterpartyReference.lei" >
+  </div>
+  <div class="form-group">
+    <label for="typNtlId">Nacionalinio identifikatoriaus rūšis</label>
+    <select class="form-control" id="typNtlId" name="typNtlIdSelector" [(ngModel)]="counterpartyReference.typNtlId">
+      <option value=""></option>
+      <option value="LT_JAR_CD">Juridinių asmenų registro kodas</option>
+      <option value="LT_INV_CD">Investicinio/ pensijų fondo kodas</option>
+      <option value="LT_NCB_ID">Nacionalinio centrinio banko identifikatorius</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="dscrptnOntnlId">Kitos nacionalinio identifikatoriaus rūšies aprašymas</label>
+    <input type="text" class="form-control" id="dscrptnOntnlId" name="dscrptnOntnlId" [(ngModel)]="counterpartyReference.dscrptnOntnlId" >
+  </div>
+  <div class="form-group">
+    <label for="ntnlId">Nacionalinis identifikatorius</label>
+    <input type="text" class="form-control" id="ntnlId" name="ntnlId" [(ngModel)]="counterpartyReference.ntnlId">
+  </div>
+  <div class="form-group">
+    <label for="typEntityId">Subjekto rūšis</label>
+    <select class="form-control" id="typEntityId" name="typEntitySelector" [(ngModel)]="counterpartyReference.typEntity">
+      <option value=""></option>
+      <option value="1">Juridinis asmuo, išskyrus tarptautinę organizaciją</option>
+      <option value="11">Tarptautinė organizacija</option>
+      <option value="2">Užsienio filialas</option>
+      <option value="3">Specialus fondas</option>
+      <option value="4">Kitas subjektas</option>
+      <option value="5">Fizinis asmuo</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="nmEntityId">Pavadinimas</label>
+    <input type="text" class="form-control" name="nmEntity" id="nmEntityId" [(ngModel)]="counterpartyReference.nmEntity">
+  </div>
+  <div class="form-group">
+    <label for="strtId">Adresas: gatvė</label>
+    <input type="text" class="form-control" id="strtId" name="strt" [(ngModel)]="counterpartyReference.strt">
+  </div>
+  <div class="form-group">
+    <label for="ctyId">Adresas: miestas/miestelis/kaimas</label>
+    <input type="text" class="form-control" id="ctyId" name="cty" [(ngModel)]="counterpartyReference.cty">
+  </div>
+  <div class="form-group">
+    <label for="pstlCdId">Adresas: pašto indeksas</label>
+    <input type="text" class="form-control" id="pstlCdId" name="pstlCd" [(ngModel)]="counterpartyReference.pstlCd">
+  </div>
+  <div class="form-group">
+    <label for="cntryId">Adresas: šalis (rezidavimo šalis)</label>
+    <input type="text" class="form-control" id="cntryId" name="cntry" [(ngModel)]="counterpartyReference.cntry">
+  </div>
+  <div class="form-group">
+    <label for="lglFrmId">Teisinė forma</label>
+    <select class="form-control" id="lglFrmId" name="lglFrmSelector" [(ngModel)]="counterpartyReference.lglFrm">
+      <option value=""></option>
+      <option value="LT101">Akcinė bendrovė [AB]</option>
+      <option value="LT102">Uždaroji akcinė bendrovė [UAB]</option>
+      <option value="LT103">Kooperatinė bendrovė (kooperatyvas) [KO]</option>
+      <option value="LT104">Tikroji ūkinė bendrija [TUB]</option>
+      <option value="LT105">Komanditinė ūkinė bendrija [KUB]</option>
+      <option value="LT106">Asociacija [A]</option>
+      <option value="LT107">Mažoji bendrija [MB]</option>
+      <option value="LT108">Žemės ūkio bendrovė [ZUB]</option>
+      <option value="LT109">Individuali įmonė [II]</option>
+      <option value="LT110">Advokatų profesinė bendrija [APB]</option>
+      <option value="LT111">Privačių detektyvų bendrija [PDB]</option>
+      <option value="LT202">Valstybės įmonė [VI]</option>
+      <option value="LT203">Savivaldybės įmonė [SI]</option>
+      <option value="LT204">Biudžetinė įstaiga [BI]</option>
+      <option value="LT205">Labdaros ir paramos fondas [LF]</option>
+      <option value="LT206">Bendrija [BN]</option>
+      <option value="LT207">Sodininkų bendrija [SD]</option>
+      <option value="LT208">Politinė partija [PP]</option>
+      <option value="LT209">Tradicinė religinė bendruomenė ar bendrija [TR]</option>
+      <option value="LT210">Religinė bendruomenė ar bendrija [RB]</option>
+      <option value="LT211">Profesinė sąjunga ar susivienijimas [PS]</option>
+      <option value="LT212">Nuolatinė komercinio arbitražo institucija [NA]</option>
+      <option value="LT213">Šeimyna [S]</option>
+      <option value="LT214">Prekybos, pramonės ir amatų rūmai [PR]</option>
+      <option value="LT215">Lietuvos prekybos, pramonės ir amatų rūmų asociacija [LPRA]</option>
+      <option value="LT216">Bendras valdymo ir pranešimų centras [CRC]</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="instttnlSctrId">Institucinis sektorius</label>
+    <select class="form-control" id="instttnlSctrId" name="instttnlSctrSelector" [(ngModel)]="counterpartyReference.instttnlSctr">
+      <option value=""></option>
+      <option value="S11">Ne finansų bendrovės</option>
+      <option value="S121">Centrinis Bankas</option>
+      <option value="S122">Indėlių bendrovės</option>
+      <option value="S123">Pinigų rinkos fondai (PRF)</option>
+      <option value="S124">Ne PRF investiciniai fondai</option>
+      <option value="S125">Kiti finansiniai tarpininkai, išskyrus draudimo bendroves ir pensijų fondus</option>
+      <option value="S126">Finansiniai pagalbininkai</option>
+      <option value="S127">Priklausomos finansų įstaigos ir pinigų skolintojai</option>
+      <option value="S128">Draudimo bendrovės</option>
+      <option value="S129">Pensijų fondai</option>
+      <option value="S1311">Centrinė valdžia</option>
+      <option value="S1312">Krašto (regiono) valdžia</option>
+      <option value="S1313">Vietos valdžia</option>
+      <option value="S1314">Socialinės apsaugos fondai</option>
+      <option value="S14_A">Namų ūkiai, kurie yra individualiosios įmonės ir partnerystės, neturinčios nepriklausomo juridinio statuso</option>
+      <option value="S14_B">Namų ūkiai, išskyrus individualiąsias įmones ir partnerystes, neturinčias nepriklausomo juridinio statuso</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="ecnmcActvtyid">Ekonominė veikla</label>
+    <select class="form-control" id="ecnmcActvtyid" name="ecnmcActvtySelector" [(ngModel)]="counterpartyReference.ecnmcActvty">
+      <option value=""></option>
+      <option value="68">Nekilnojamojo turto operacijos</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="lglPrcdngSttsId">Teisinio proceso statusas</label>
+    <select class="form-control" id="lglPrcdngSttsId" name="lglPrcdngSttsSelector"  [(ngModel)]="counterpartyReference.lglPrcdngStts">
+      <option value=""></option>
+      <option value="1">Nesiimta teisinių veiksmų</option>
+      <option value="2">Teisminės administracijos priežiūra, turto valdymo įmonės paskyrimas arba panašios priemonės</option>
+      <option value="3">Bankrotas/nemokumas</option>
+      <option value="4">Kitos teisinės priemonės</option>
+    </select>
+  </div>
+</div>
+</div>
+  <br/>
+<button type="submit" class="btn btn-success float-right">Submit</button>
+</form>
+<br/>
+<br/>
+

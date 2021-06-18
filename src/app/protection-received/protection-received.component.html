@@ -1,0 +1,164 @@
+
+  <div class="card">
+    <div class="card-body">
+      <div id="overlay">
+        <div class="w-100 d-flex justify-content-center align-items-center">
+          <div class="spinner"></div>
+        </div>
+      </div>
+      <ngb-accordion #acc="ngbAccordion" *ngFor="let protectionReceived of protectionReceivedList; let i = index">
+        <ngb-panel id="toggle-{{i+1}}" title="Ikeičiamas turtas {{i+1}}">
+          <button class="btn btn-danger float-right" (click)="removeOneMore(protectionReceived)">remove</button>
+          <ng-template ngbPanelContent>
+            <div >
+              <div class="form-group">
+                <label for="rprtngAgnCdId">Atskaitingojo agento identifikatorius</label>
+                <input type="text" disabled class="form-control" id="rprtngAgnCdId" [(ngModel)]="protectionReceived.rprtngAgnCd" name="rprtngAgnCd">
+              </div>
+              <div class="form-group">
+                <label for="obsrvdAgntCdId">Stebimo agento identifikatorius</label>
+                <input type="text" disabled class="form-control" id="obsrvdAgntCdId" [(ngModel)]="protectionReceived.obsrvdAgntCd" name="obsrvdAgntCd">
+              </div>
+              <div class="form-group">
+                <label for="prtctnId">Apsaugos identifikatorius</label>
+                <input type="text" class="form-control" id="prtctnId" [(ngModel)]="protectionReceived.prtctnId" name="prtctnId">
+              </div>
+              <div class="form-group">
+                <label for="unqPrprtNmbrPrtctnId">Apsaugos unikalus turto numeris</label>
+                <input type="text" class="form-control" id="unqPrprtNmbrPrtctnId" [(ngModel)]="protectionReceived.unqPrprtNmbrPrtctn" name="unqPrprtNmbrPrtctn">
+              </div>
+              <div class="form-group">
+                <label for="isinCdPrtctnId">Apsaugos ISIN kodas</label>
+                <input type="text" class="form-control" id="isinCdPrtctnId" [(ngModel)]="protectionReceived.isinCdPrtctn" name="isinCdPrtctn">
+              </div>
+              <div class="form-group">
+                <label for="typPrtctnId">Apsaugos rūšis</label>
+                <select class="form-control" id="typPrtctnId" name="typPrtctn" [(ngModel)]="protectionReceived.typPrtctn">
+                  <option value="13">Auksas</option>
+                  <option value="15_A">Pinigai ir indėliai: deponuotos lėšos</option>
+                  <option value="15_B">Pinigai ir indėliai: lėšos atsiskaitomojoje sąskaitoje</option>
+                  <option value="15_C">Pinigai ir indėliai: kiti pinigai ir indėliai</option>
+                  <option value="12_A">Vertybiniai popieriai: LR ir kitų valstybių vyriausybių vertybiniai popieriai</option>
+                  <option value="12_B">Vertybiniai popieriai: kotiruojami įmonių skolos vertybiniai popieriai</option>
+                  <option value="12_C">Vertybiniai popieriai: nekotiruojami įmonių skolos vertybiniai popieriai</option>
+                  <option value="12_D">Vertybiniai popieriai: kiti vertybiniai popieriai</option>
+                  <option value="16">Paskolos</option>
+                  <option value="18_A">Nuosavybės priemonės ir investicinių fondų akcijos (vienetai): kotiruojami įmonių NVP (biržinės akcijos)</option>
+                  <option value="18_B">Nuosavybės priemonės ir investicinių fondų akcijos (vienetai): nekotiruojami įmonių NVP (nebiržinės akcijos)</option>
+                  <option value="18_C">Nuosavybės priemonės ir investicinių fondų akcijos (vienetai): skolininko NVP</option>
+                  <option value="18_D">Nuosavybės priemonės ir investicinių fondų akcijos (vienetai): investicinių fondų akcijos ar vienetai</option>
+                  <option value="18_E">Nuosavybės priemonės ir investicinių fondų akcijos (vienetai): kitos nuosavybės priemonės ir investicinių fondų akcijos (vienetai)</option>
+                  <option value="4">Kredito išvestinės finansinės priemonės</option>
+                  <option value="5_A">Finansinės garantijos, išskyrus kredito išvestines finansines priemones: centrinės valdymo įstaigos</option>
+                  <option value="5_B">Finansinės garantijos, išskyrus kredito išvestines finansines priemones: vietinės valdymo įstaigos</option>
+                  <option value="5_C">Finansinės garantijos, išskyrus kredito išvestines finansines priemones: bankai</option>
+                  <option value="5_D">Finansinės garantijos, išskyrus kredito išvestines finansines priemones: garantijas teikiančios įmonės (INVEGA, ŽŪPGF)</option>
+                  <option value="5_E">Finansinės garantijos, išskyrus kredito išvestines finansines priemones: kredito draudimą teikiančios įmonės</option>
+                  <option value="5_F">Finansinės garantijos, išskyrus kredito išvestines finansines priemones: ne finansų įmonės (taip pat vekselio davėjai)</option>
+                  <option value="5_G">Finansinės garantijos, išskyrus kredito išvestines finansines priemones: namų ūkiai (taip pat vekselių davėjai)</option>
+                  <option value="5_H">Finansinės garantijos, išskyrus kredito išvestines finansines priemones: kitos finansinės garantijos, išskyrus kredito išvestines finansines priemones</option>
+                  <option value="17_A">Gautinos prekybos sumos: gautinos sumos ne pagal faktoringo sandorius</option>
+                  <option value="17_B">Gautinos prekybos sumos: vekseliai</option>
+                  <option value="17_C">Gautinos prekybos sumos: gautinos sumos pagal faktoringo sandorius</option>
+                  <option value="17_D">Gautinos prekybos sumos: kitos gautinos prekybos sumos</option>
+                  <option value="2">Įkeisti gyvybės draudimo liudijimai</option>
+                  <option value="8_A">Gyvenamojo nekilnojamojo turto įkaitas: gyvenamasis namas su žemės sklypu, sodyba,  kotedžas, sodo namas</option>
+                  <option value="8_B">Gyvenamojo nekilnojamojo turto įkaitas: butas</option>
+                  <option value="8_C">Gyvenamojo nekilnojamojo turto įkaitas: kitas gyvenamojo nekilnojamojo turto įkaitas</option>
+                  <option value="9_A">Biurai ir komercinės paskirties patalpos: biurai</option>
+                  <option value="9_B">Biurai ir komercinės paskirties patalpos: kitos komercinės paskirties patalpos</option>
+                  <option value="10_A">Komercinio nekilnojamojo turto įkaitas: prekybos paskirties pastatai</option>
+                  <option value="10_B">Komercinio nekilnojamojo turto įkaitas: viešbučiai, restoranai, kt. poilsio paskirties pastatai</option>
+                  <option value="10_C">Komercinio nekilnojamojo turto įkaitas: gamybinės, sandėliavimo paskirties pastatai</option>
+                  <option value="10_D">Komercinio nekilnojamojo turto įkaitas: komercinės paskirties žemė</option>
+                  <option value="10_E">Komercinio nekilnojamojo turto įkaitas: žemės ūkio paskirties žemė</option>
+                  <option value="10_F">Komercinio nekilnojamojo turto įkaitas: kitas komercinio nekilnojamojo turto įkaitas</option>
+                  <option value="3_A">Kitos fizinės užtikrinimo priemonės: transporto priemonės ir įranga</option>
+                  <option value="3_B">Kitos fizinės užtikrinimo priemonės: įrenginiai ir įranga</option>
+                  <option value="3_C">Kitos fizinės užtikrinimo priemonės: žaliavos ir medžiagos</option>
+                  <option value="3_D">Kitos fizinės užtikrinimo priemonės: nebaigta gamyba</option>
+                  <option value="3_E">Kitos fizinės užtikrinimo priemonės: gyvenamosios paskirties žemės sklypas</option>
+                  <option value="3_F">Kitos fizinės užtikrinimo priemonės: kitos kitos fizinės užtikrinimo priemonės</option>
+                  <option value="7">Kita apsauga</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="prtctnVlId">Apsaugos vertė</label>
+                <input type="text" class="form-control" id="prtctnVlId" [(ngModel)]="protectionReceived.prtctnVl" name="prtctnVl">
+              </div>
+              <div class="form-group">
+                <label for="typPrtctnVlId">Apsaugos vertės rūšis</label>
+                <select class="form-control" id="typPrtctnVlId" name="typPrtctnVl" [(ngModel)]="protectionReceived.typPrtctnVl">
+                  <option value="4">Tariamoji suma</option>
+                  <option value="1">Tikroji vertė</option>
+                  <option value="3">Rinkos vertė</option>
+                  <option value="2">Ilgalaikė tvari vertė</option>
+                  <option value="5">Kita užtikrinimo vertė</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="prtctnVltnApprchId">Apsaugos vertinimo metodas</label>
+                <select class="form-control" id="prtctnVltnApprchId" name="prtctnVltnApprch" [(ngModel)]="protectionReceived.prtctnVltnApprch">
+                  <option value="3">Rinkos vertė</option>
+                  <option value="1">Kitos sandorio šalies vertinimas</option>
+                  <option value="2">Kreditoriaus vertinimas</option>
+                  <option value="5">Trečiosios šalies vertinimas</option>
+                  <option value="4">Kita vertinimo rūšis</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="iso3166NutsDsjntId">Nekilnojamojo turto įkaito vieta</label>
+                <select class="form-control" id="iso3166NutsDsjntId" value="iso3166NutsDsjnt" [(ngModel)]="protectionReceived.iso3166NutsDsjnt">
+                  <option value=""></option>
+                  <option value="LT011A">Vilnius</option>
+                  <option value="LT011B">Vilniaus apskritis, išskyrus Vilnių</option>
+                  <option value="LT021A">Alytus</option>
+                  <option value="LT021B">Alytaus apskritis, išskyrus Alytų</option>
+                  <option value="LT022A">Kaunas</option>
+                  <option value="LT022B">Kauno apskritis, išskyrus Kauną</option>
+                  <option value="LT023A">Klaipėda</option>
+                  <option value="LT023B">Klaipėdos apskritis, išskyrus Klaipėdą</option>
+                  <option value="LT024A">Marijampolė</option>
+                  <option value="LT024B">Marijampolės apskritis, išskyrus Marijampolę</option>
+                  <option value="LT025A">Panevėžys</option>
+                  <option value="LT025B">Panevėžio apskritis, išskyrus Panevėžį</option>
+                  <option value="LT026A">Šiauliai</option>
+                  <option value="LT026B">Šiaulių apskritis, išskyrus Šiaulius</option>
+                  <option value="LT027A">Tauragė</option>
+                  <option value="LT027B">Tauragės apskritis, išskyrus Tauragę</option>
+                  <option value="LT028A">Telšiai</option>
+                  <option value="LT028B">Telšių apskritis, išskyrus Telšius</option>
+                  <option value="LT029A">Utena</option>
+                  <option value="LT029B">Utenos apskritis, išskyrus Uteną</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="dtMtrtyPrtctnId">Apsaugos pasibaigimo termino data</label>
+                <input type="text" class="form-control" id="dtMtrtyPrtctnId" [(ngModel)]="protectionReceived.dtMtrtyPrtctn" name="dtMtrtyPrtctn">
+              </div>
+              <div class="form-group">
+                <label for="orgnlPrtctnVlId">Pradinė apsaugos vertė</label>
+                <input type="text" class="form-control" id="orgnlPrtctnVlId" [(ngModel)]="protectionReceived.orgnlPrtctnVl" name="orgnlPrtctnVl">
+              </div>
+              <div class="form-group">
+                <label for="prprtValuerId">Turto vertintojo identifikatorius</label>
+                <input type="text" class="form-control" id="prprtValuerId" [(ngModel)]="protectionReceived.prprtValuerId" name="prprtValuerId">
+              </div>
+              <div class="form-group">
+                <label for="addInfClltrlId">Papildoma informacija apie įkaitą</label>
+                <input type="text" class="form-control" id="addInfClltrlId" [(ngModel)]="protectionReceived.addInfClltrl" name="addInfClltrl">
+              </div>
+            </div>
+            <button class="btn btn-danger float-right" (click)="removeOneMore(protectionReceived)">remove</button>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+      <br/>
+      <button class="btn btn-info float-right" (click)="addOneMore()">Add one more</button>
+    </div>
+  </div>
+<br/>
+<button type="submit" class="btn btn-success float-right" (click)="save()">Submit</button>
+<br/>
+<br/>
+

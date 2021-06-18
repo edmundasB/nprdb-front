@@ -1,0 +1,51 @@
+<form (ngSubmit)="onSubmit()">
+  <div class="card">
+    <div class="card-body">
+      <div id="overlay">
+        <div class="w-100 d-flex justify-content-center align-items-center">
+          <div class="spinner"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="rprtngAgnCdId">Atskaitingojo agento identifikatorius</label>
+        <input type="text" disabled class="form-control" id="rprtngAgnCdId" required [(ngModel)]="accounting.rprtngAgnCd" name="rprtngAgnCd">
+      </div>
+      <div class="form-group">
+        <label for="obsrvAgntCdId">Stebimo agento identifikatorius</label>
+        <input type="text" disabled class="form-control" id="obsrvAgntCdId" required [(ngModel)]="accounting.obsrvAgntCd" name="obsrvAgntCd">
+      </div>
+      <div class="form-group">
+        <label for="cntrctId">Paskolos sutarties identifikatorius</label>
+        <input type="text" disabled class="form-control" id="cntrctId" required [(ngModel)]="accounting.cntrctId" name="cntrctId">
+      </div>
+      <div class="form-group">
+        <label for="instrmntId">Skolos priemonės identifikatorius</label>
+        <input type="text" disabled class="form-control" id="instrmntId" required [(ngModel)]="accounting.instrmntId" name="instrmntId">
+      </div>
+      <div class="form-group">
+        <label for="accmltdWrtffsPrncplId">Sukauptos nurašytos sumos (pagrindinė suma)</label>
+        <input type="text" class="form-control" id="accmltdWrtffsPrncplId" required [(ngModel)]="accounting.accmltdWrtffsPrncpl" name="accmltdWrtffsPrncpl">
+      </div>
+      <div class="form-group">
+        <label for="accmltdWrtffsIntrstId">Sukauptos nurašytos sumos (palūkanos)</label>
+        <input type="text" class="form-control" id="accmltdWrtffsIntrstId" required [(ngModel)]="accounting.accmltdWrtffsIntrst" name="accmltdWrtffsIntrst">
+      </div>
+      <div class="form-group">
+        <label for="frbrncSttsId">Restruktūrizavimo ir sąlygų pakeitimo statusas</label>
+        <select class="form-control" id="frbrncSttsId" name="frbrncStts" [(ngModel)]="accounting.frbrncStts" >
+          <option value=""></option>
+          <option value="4">Restruktūrizuota: priemonės su pakeistomis žemesnėmis nei rinkos sąlygos palūkanų normomis</option>
+          <option value="5">Restruktūrizuota: priemonės, kurių kitos sąlygos pakeistos</option>
+          <option value="3">Restruktūrizuota: refinansuota arba iš dalies refinansuota skola</option>
+          <option value="9">Priemonė, kurios sąlygos pakeistos be restruktūrizavimo priemonių</option>
+          <option value="8">Nerestruktūrizuota arba sąlygos nepakeistos</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <button type="submit" class="btn btn-success float-right">Submit</button>
+</form>
+<br/>
+<br/>
+

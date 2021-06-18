@@ -1,0 +1,40 @@
+<form (ngSubmit)="onSubmit()">
+  <div class="card">
+    <div class="card-body">
+      <div id="overlay">
+        <div class="w-100 d-flex justify-content-center align-items-center">
+          <div class="spinner"></div>
+        </div>
+      </div>
+  <div class="form-group">
+    <label for="rprtngAgnCdId">Atskaitingojo agento identifikatorius</label>
+    <input type="text" disabled class="form-control" id="rprtngAgnCdId" [(ngModel)]="protectionReceivedProtectionProviders.rprtngAgnCd" name="rprtngAgnCd">
+  </div>
+  <div class="form-group">
+    <label for="obsrvdAgntCdId">Stebimo agento identifikatorius</label>
+    <input type="text" disabled class="form-control" id="obsrvdAgntCdId" [(ngModel)]="protectionReceivedProtectionProviders.obsrvdAgntCd" name="obsrvdAgntCd">
+  </div>
+  <div class="form-group">
+    <label for="prtctnId">Apsaugos identifikatorius</label>
+    <input type="text" class="form-control" id="prtctnId" [(ngModel)]="protectionReceivedProtectionProviders.prtctnId" name="prtctnId">
+  </div>
+  <div class="form-group">
+    <label for="prtctnPrvdrCdId">Apsaugos teikėjo identifikatorius</label>
+    <input type="text" class="form-control" id="prtctnPrvdrCdId" [(ngModel)]="protectionReceivedProtectionProviders.prtctnPrvdrCd" name="prtctnPrvdrCd">
+  </div>
+  <div class="form-group">
+    <label for="prmrPrtctnPrvdrId">Apsaugos teikėjas</label>
+    <select class="form-control" id="prmrPrtctnPrvdrId" name="prmrPrtctnPrvdr" [(ngModel)]="protectionReceivedProtectionProviders.prmrPrtctnPrvdr">
+      <option value=""></option>
+      <option value="1">Pagrindinis apsaugos teikėjas</option>
+      <option value="2">Nepagrindinis apsaugos teikėjas</option>
+      <option value="9">Jau nebėra apsaugos teikėju</option>
+    </select>
+  </div>
+    </div>
+  </div>
+  <br/>
+  <button type="submit" class="btn btn-success float-right">Submit</button>
+</form>
+<br/>
+<br/>

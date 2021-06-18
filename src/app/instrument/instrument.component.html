@@ -1,0 +1,225 @@
+<form (ngSubmit)="onSubmit()">
+  <div class="card">
+    <div class="card-body">
+      <div id="overlay">
+        <div class="w-100 d-flex justify-content-center align-items-center">
+          <div class="spinner"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="rprtngAgnCdId">Atskaitingojo agento identifikatorius</label>
+        <input type="text" disabled disabled class="form-control" id="rprtngAgnCdId" [(ngModel)]="instrument.rprtngAgnCd" name="rprtngAgnCd">
+      </div>
+      <div class="form-group">
+        <label for="obsrvdAgnCdId">Stebimo agento identifikatorius</label>
+        <input type="text" disabled class="form-control" id="obsrvdAgnCdId" [(ngModel)]="instrument.obsrvdAgnCd" name="obsrvdAgnCd">
+      </div>
+      <div class="form-group">
+        <label for="cntrctCdId">Paskolos sutarties identifikatorius</label>
+        <input type="text" class="form-control" id="cntrctCdId" [(ngModel)]="instrument.cntrctCd" name="cntrctCd">
+      </div>
+      <div class="form-group">
+        <label for="instrmntId">Skolos priemonės identifikatorius</label>
+        <input type="text" class="form-control" id="instrmntId" [(ngModel)]="instrument.instrmntId" name="instrmntId">
+      </div>
+      <div class="form-group">
+        <label for="typInstrmntId">Skolos priemonės rūšis</label>
+        <select class="form-control" id="typInstrmntId" name="typInstrmnt" [(ngModel)]="instrument.typInstrmnt">
+          <option value=""></option>
+          <option value="1001">Atnaujinamasis kreditas, išskyrus lėšų pereikvojimą ir kredito kortelės skolą.</option>
+          <option value="1002">Kredito linijos, išskyrus atnaujinamąjį kreditą</option>
+          <option value="1003">Atvirkštinio atpirkimo sandoriai</option>
+          <option value="71_A">Gautinos prekybos sumos: faktoringas su atgręžtinio reikalavimo teise</option>
+          <option value="71_B">Gautinos prekybos sumos: faktoringas be atgręžtinio reikalavimo teisės</option>
+          <option value="71_C">Gautinos prekybos sumos: kitos gautinos prekybos sumos</option>
+          <option value="80_A">Finansinė nuoma: išperkamoji nuoma</option>
+          <option value="80_B">Finansinė nuoma: kita finansinė nuoma</option>
+          <option value="1004_A">Kitos paskolos: tiesioginiai kreditai</option>
+          <option value="1004_B">Kitos paskolos: išsimokėtinai (skolon, su atidėtu apmokėjimu) parduotas turtas</option>
+          <option value="1004_C">Kitos paskolos: grįžtamoji finansinė nuoma</option>
+          <option value="1004_D">Kitos paskolos: kitos paskolos</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="typAmrtstnId">Amortizacijos rūšis</label>
+        <select class="form-control" id="typAmrtstnId" name="typAmrtstn" [(ngModel)]="instrument.typAmrtstn" >
+          <option value=""></option>
+          <option value="1">Prancūzijos</option>
+          <option value="2">Vokietijos</option>
+          <option value="3">Fiksuotos amortizacijos grafikas</option>
+          <option value="4">Vienkartinė įmoka</option>
+          <option value="5">Kita</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="iso4217Id">Valiuta</label>
+        <select class="form-control" id="iso4217Id" name="iso4217" [(ngModel)]="instrument.iso4217" >
+          <option value="EUR">Euro</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="dtIncptId">Pradžios data</label>
+        <input type="text" class="form-control" id="dtIncptId" name="dtIncpt" [(ngModel)]="instrument.dtIncpt">
+      </div>
+<!--      <div class="form-group">
+        <label for="dtEndIntrstOnlyId">Tik palūkanų laikotarpio pabaigos data</label>
+        <input type="text" class="form-control" id="dtEndIntrstOnlyId" [(ngModel)]="instrument.dtEndIntrstOnly" name="dtEndIntrstOnly">
+      </div>-->
+<!--      <div class="form-group">
+        <label for="intrstRtCpId">Palūkanų normų „lubos“</label>
+        <input type="text" class="form-control" id="intrstRtCpId" [(ngModel)]="instrument.intrstRtCp" name="intrstRtCp">
+      </div>-->
+<!--      <div class="form-group">
+        <label for="intrstRtFlrId">Palūkanų normų „grindys“</label>
+        <input type="text" class="form-control" id="intrstRtFlrId" [(ngModel)]="instrument.intrstRtFlr" name="intrstRtFlr">
+      </div>-->
+      <div class="form-group">
+        <label for="frqncyIntrstRtRstId">Palūkanų normos perskaičiavimo dažnumas</label>
+        <select class="form-control" id="frqncyIntrstRtRstId" name="frqncyIntrstRtRst" [(ngModel)]="instrument.frqncyIntrstRtRst">
+          <option value=""></option>
+          <option value="0">Neperskaičiuojama</option>
+          <option value="16">Vienadienė</option>
+          <option value="8">Mėnesio</option>
+          <option value="18">Ketvirčio</option>
+          <option value="19">Kas pusmetį</option>
+          <option value="1">Kasmet</option>
+          <option value="3">Kreditoriaus nuožiūra</option>
+          <option value="12">Kitas dažnumas</option>
+        </select>
+      </div>
+<!--      <div class="form-group">
+        <label for="intrstRtSprdId">Palūkanų normų skirtumas / marža</label>
+        <input type="text" class="form-control" id="intrstRtSprdId" [(ngModel)]="instrument.intrstRtSprd" name="intrstRtSprd">
+      </div>-->
+      <div class="form-group">
+        <label for="typIntrstRtId">Palūkanų normų rūšis</label>
+        <select class="form-control" id="typIntrstRtId" name="typIntrstRt" [(ngModel)]="instrument.typIntrstRt"  >
+          <option value=""></option>
+          <option value="0">Netaikytina</option>
+          <option value="1">Fiksuotoji</option>
+          <option value="2">Kintama</option>
+          <option value="3">Mišri</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="dtLglFnlMtrtyId">Juridinio galutinio termino data</label>
+        <input type="text" class="form-control" id="dtLglFnlMtrtyId" [(ngModel)]="instrument.dtLglFnlMtrty" name="dtLglFnlMtrty">
+      </div>
+      <div class="form-group">
+        <label for="cmmtmntIncptnId">Įsipareigojimų suma pradžioje</label>
+        <input type="text" class="form-control" id="cmmtmntIncptnId" [(ngModel)]="instrument.cmmtmntIncptn" name="cmmtmntIncptn">
+      </div>
+      <div class="form-group">
+        <label for="pymntFrqncyId">Mokėjimo dažnumas</label>
+        <select class="form-control" id="pymntFrqncyId" name="pymntFrqncy" [(ngModel)]="instrument.pymntFrqncy">
+          <option value=""></option>
+          <option value="8">Mėnesio</option>
+          <option value="18">Ketvirčio</option>
+          <option value="19">Pusmečio</option>
+          <option value="1">Metų</option>
+          <option value="4">Vienkartinė įmoka</option>
+          <option value="22">Nulinė atkarpa</option>
+          <option value="15">Kita</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="prjctFnncLnId">Projektų finansavimo paskola</label>
+        <select class="form-control" id="prjctFnncLnId" name="prjctFnncLn" [(ngModel)]="instrument.prjctFnncLn" >
+          <option value=""></option>
+          <option value="1">Projektų finansavimo paskola</option>
+          <option value="2">Ne projektų finansavimo paskola</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="prpsId">Tikslas</label>
+        <select class="form-control" id="prpsId" name="prps" [(ngModel)]="instrument.prps" >
+          <option value=""></option>
+          <option value="12_A">Gyvenamojo nekilnojamojo turto pirkimas: pirmo gyvenamojo nekilnojamojo turto, skirto savo reikmėms, pirkimas</option>
+          <option value="12_B">Gyvenamojo nekilnojamojo turto pirkimas: gyvenamojo nekilnojamojo turto, skirto nuomoti, pirkimas</option>
+          <option value="12_C">Gyvenamojo nekilnojamojo turto pirkimas: kitas gyvenamojo nekilnojamojo turto pirkimas</option>
+          <option value="13_A">Komercinio nekilnojamojo turto pirkimas: komercinio nekilnojamojo turto, skirto nuomoti, pirkimas</option>
+          <option value="13_B">Komercinio nekilnojamojo turto pirkimas: kitas komercinio nekilnojamojo turto pirkimas</option>
+          <option value="4">Garantinės įmokos skolinimas</option>
+          <option value="5">Skolos finansavimas</option>
+          <option value="6">Importas</option>
+          <option value="7">Eksportas</option>
+          <option value="8_A">Statybų investicija: statybų investicija į pirmą gyvenamąjį nekilnojamąjį turtą, skirtą savo reikmėms</option>
+          <option value="8_B">Statybų investicija: statybų investicija į gyvenamąjį nekilnojamąjį turtą, skirtą nuomoti</option>
+          <option value="8_C">Statybų investicija: kita statybų investicija į gyvenamąjį nekilnojamąjį turtą</option>
+          <option value="8_D">Statybų investicija: statybų investicija į komercinį nekilnojamąjį turtą, skirtą nuomoti</option>
+          <option value="8_E">Statybų investicija: kita statybų investicija į komercinį nekilnojamąjį turtą</option>
+          <option value="9">Apyvartinio kapitalo priemonė</option>
+          <option value="11_A">Kiti tikslai: vartojimo reikmėms</option>
+          <option value="11_B">Kiti tikslai: vertybinių popierių įsigijimo finansavimas, išskyrus garantinės įmokos skolinimo sandorius</option>
+          <option value="11_C">Kiti tikslai: transporto priemonių įsigijimas, išskyrus importui ir eksportui</option>
+          <option value="11_D">Kiti tikslai: gamybos priemonių ir kito ilgalaikio materialaus turto įsigijimas, išskyrus importui ir eksportui</option>
+          <option value="11_E">Kiti tikslai: kiti tikslai</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="addInfLoanPrpsId">Papildoma informacija apie paskolos paskirtį</label>
+        <input type="text" class="form-control" id="addInfLoanPrpsId" name="addInfLoanPrps" [(ngModel)]="instrument.addInfLoanPrps">
+      </div>
+<!--      <div class="form-group">
+        <label for="rfrncRtIndxId">Orientacinės palūkanų normos indeksas</label>
+        <select class="form-control" id="rfrncRtIndxId" name="rfrncRtIndx" [(ngModel)]="instrument.rfrncRtIndx">
+          <option value="NA">Netaikytina</option>
+          <option value="EURIBOR">EURIBOR</option>
+          <option value="USD_LIBOR">USD LIBOR</option>
+          <option value="GBP_LIBOR">GBP LIBOR</option>
+          <option value="EUR_LIBOR">EUR LIBOR</option>
+          <option value="JPY_LIBOR">JPY LIBOR</option>
+          <option value="CHF_LIBOR">CHF LIBOR</option>
+          <option value="SEK_LIBOR">SEK LIBOR</option>
+          <option value="MIBOR">MIBOR</option>
+          <option value="NIBOR">NIBOR</option>
+          <option value="OTHER_SINGLE">Kita paprasta orientacinė palūkanų norma</option>
+          <option value="OTHER_MULTIPLE">Kita sudėtinė orientacinė palūkanų norma</option>
+        </select>
+      </div>-->
+<!--      <div class="form-group">
+        <label for="rfrncRtMtrtId">Orientacinės palūkanų normos terminas</label>
+        <select class="form-control" id="rfrncRtMtrtId" name="rfrncRtMtrt" [(ngModel)]="instrument.rfrncRtMtrt">
+          <option value="NA">Netaikytina</option>
+          <option value="ON">Vienos dienos</option>
+          <option value="1W">Vienos savaitės</option>
+          <option value="2W">Dviejų savaičių</option>
+          <option value="3W">Trijų savaičių</option>
+          <option value="1M">Vieno mėnesio</option>
+          <option value="2M">Dviejų mėnesių</option>
+          <option value="3M">Trijų mėnesių</option>
+          <option value="4M">Keturių mėnesių</option>
+          <option value="5M">Penkių mėnesių</option>
+          <option value="6M">Šešių mėnesių</option>
+          <option value="7M">Septynių mėnesių</option>
+          <option value="8M">Aštuonių mėnesių</option>
+          <option value="9M">Devynių mėnesių</option>
+          <option value="10M">Dešimties mėnesių</option>
+          <option value="11M">Vienuolikos mėnesių</option>
+          <option value="12M">Dvylikos mėnesių</option>
+          <option value="OVER_12M">Virš dvylikos mėnesių</option>
+        </select>
+      </div>-->
+      <div class="form-group">
+        <label for="dtSttlmntId">Atsiskaitymo diena</label>
+        <input type="text" class="form-control" id="dtSttlmntId" name="dtSttlmnt" [(ngModel)]="instrument.dtSttlmnt">
+      </div>
+      <div class="form-group">
+        <label for="rpymntRghtsId">Grąžinimo teisės</label>
+        <select class="form-control" id="rpymntRghtsId" name="rpymntRghts" [(ngModel)]="instrument.rpymntRghts">
+          <option value=""></option>
+          <option value="1">Pagal pareikalavimą arba įspėjus prieš trumpą laikotarpį</option>
+          <option value="2">Kita</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="crdPrchId">Kreditoriaus, kuris nupirko (perėmė) paskolą, identifikatorius</label>
+        <input type="text" class="form-control" id="crdPrchId" name="crdPrchId" [(ngModel)]="instrument.crdPrchId">
+      </div>
+     </div>
+    </div>
+  <br/>
+  <button type="submit" class="btn btn-success float-right">Submit</button>
+</form>
+<br/>
+<br/>

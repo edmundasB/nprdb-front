@@ -1,0 +1,17 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: nprdb-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        label-key : label-value
+    spec:
+      containers:
+        - name: nprdb-deploment-container
+          image: inyee/nprdb-front:v1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
